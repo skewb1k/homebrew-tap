@@ -10,24 +10,30 @@ class Upfile < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/skewb1k/upfile/releases/download/v1.0.2/upfile_Darwin_x86_64.tar.gz"
-      sha256 "4427aaf09cb2b8df2ed821ce39b5fe8e031e2a7d8d606627a0962b59913f2bf4"
+      sha256 "b112e8b61f909b918c17340a98e1682e9f5b60cf0ec5c5c668ce823ceaa7c8f1"
 
       def install
         bin.install "upfile"
-        bash_completion.install "completions/upfile.bash" => "upfile"
-        zsh_completion.install "completions/upfile.zsh" => "_upfile"
-        fish_completion.install "completions/upfile.fish"
+        bash_output = Utils.safe_popen_read("#{bin}/upfile", "completion", "bash")
+        (bash_completion/"upfile").write bash_output
+        zsh_output = Utils.safe_popen_read("#{bin}/upfile", "completion", "zsh")
+        (zsh_completion/"_upfile").write zsh_output
+        fish_output = Utils.safe_popen_read("#{bin}/upfile", "completion", "fish")
+        (fish_completion/"upfile.fish").write fish_output
       end
     end
     if Hardware::CPU.arm?
       url "https://github.com/skewb1k/upfile/releases/download/v1.0.2/upfile_Darwin_arm64.tar.gz"
-      sha256 "f8f93abb19ce10e08cb599fcff06253b959e63f9017db059dd8675278b664d25"
+      sha256 "4e78fed2b38dfa7560fb848b523f70fc6190986c348116c4e46d3862fba12ce0"
 
       def install
         bin.install "upfile"
-        bash_completion.install "completions/upfile.bash" => "upfile"
-        zsh_completion.install "completions/upfile.zsh" => "_upfile"
-        fish_completion.install "completions/upfile.fish"
+        bash_output = Utils.safe_popen_read("#{bin}/upfile", "completion", "bash")
+        (bash_completion/"upfile").write bash_output
+        zsh_output = Utils.safe_popen_read("#{bin}/upfile", "completion", "zsh")
+        (zsh_completion/"_upfile").write zsh_output
+        fish_output = Utils.safe_popen_read("#{bin}/upfile", "completion", "fish")
+        (fish_completion/"upfile.fish").write fish_output
       end
     end
   end
@@ -35,22 +41,28 @@ class Upfile < Formula
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
       url "https://github.com/skewb1k/upfile/releases/download/v1.0.2/upfile_Linux_x86_64.tar.gz"
-      sha256 "ccb1b8ee5b06655c6d4a2a6718d19adda6dbd92bb267da760f438bb14dedeb69"
+      sha256 "0ddee9eb668c220cd2c3eb81c620539a13faa41663bcf38f1742f0f10ff3c448"
       def install
         bin.install "upfile"
-        bash_completion.install "completions/upfile.bash" => "upfile"
-        zsh_completion.install "completions/upfile.zsh" => "_upfile"
-        fish_completion.install "completions/upfile.fish"
+        bash_output = Utils.safe_popen_read("#{bin}/upfile", "completion", "bash")
+        (bash_completion/"upfile").write bash_output
+        zsh_output = Utils.safe_popen_read("#{bin}/upfile", "completion", "zsh")
+        (zsh_completion/"_upfile").write zsh_output
+        fish_output = Utils.safe_popen_read("#{bin}/upfile", "completion", "fish")
+        (fish_completion/"upfile.fish").write fish_output
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
       url "https://github.com/skewb1k/upfile/releases/download/v1.0.2/upfile_Linux_arm64.tar.gz"
-      sha256 "d500936231be558e6c5b84159b218b843355a755c49ab7c3cd54c113e7301c5d"
+      sha256 "3a451dd612f5402ef968177763541ac6ff5c0a832e02c0ae0599b32be1c527a5"
       def install
         bin.install "upfile"
-        bash_completion.install "completions/upfile.bash" => "upfile"
-        zsh_completion.install "completions/upfile.zsh" => "_upfile"
-        fish_completion.install "completions/upfile.fish"
+        bash_output = Utils.safe_popen_read("#{bin}/upfile", "completion", "bash")
+        (bash_completion/"upfile").write bash_output
+        zsh_output = Utils.safe_popen_read("#{bin}/upfile", "completion", "zsh")
+        (zsh_completion/"_upfile").write zsh_output
+        fish_output = Utils.safe_popen_read("#{bin}/upfile", "completion", "fish")
+        (fish_completion/"upfile.fish").write fish_output
       end
     end
   end
