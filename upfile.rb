@@ -5,64 +5,52 @@
 class Upfile < Formula
   desc "A CLI tool to manage and sync shared configuration files across projects."
   homepage "github.com/skewb1k/upfile"
-  version "1.0.1"
+  version "1.0.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/skewb1k/upfile/releases/download/v1.0.1/upfile_Darwin_x86_64.tar.gz"
-      sha256 "aa9d8db31ff46cb591208298530d7818ddfbab904686c3359d02109b5a0a1355"
+      url "https://github.com/skewb1k/upfile/releases/download/v1.0.2/upfile_Darwin_x86_64.tar.gz"
+      sha256 "451ac0c41704834637373445b1ff9f8a3cd9a938c4254d93b877f4533b5e623b"
 
       def install
         bin.install "upfile"
-        output = Utils.popen_read("#{bin}/upfile completion bash")
-        (bash_completion/"upfile").write output
-        output = Utils.popen_read("#{bin}/upfile completion zsh")
-        (zsh_completion/"_upfile").write output
-        output = Utils.popen_read("#{bin}/upfile completion fish")
-        (fish_completion/"upfile.fish").write output
+        bash_completion.install "completions/upfile.bash" => "upfile"
+        zsh_completion.install "completions/upfile.zsh" => "_upfile"
+        fish_completion.install "completions/upfile.fish"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/skewb1k/upfile/releases/download/v1.0.1/upfile_Darwin_arm64.tar.gz"
-      sha256 "459a9c03fa98befad0dd4e4015e2efb30de0da2808fe03e98f4e60709e72b540"
+      url "https://github.com/skewb1k/upfile/releases/download/v1.0.2/upfile_Darwin_arm64.tar.gz"
+      sha256 "81ba5d54607a060a90f6eb04290adcdedd694655af296f7491175a20bb7f18eb"
 
       def install
         bin.install "upfile"
-        output = Utils.popen_read("#{bin}/upfile completion bash")
-        (bash_completion/"upfile").write output
-        output = Utils.popen_read("#{bin}/upfile completion zsh")
-        (zsh_completion/"_upfile").write output
-        output = Utils.popen_read("#{bin}/upfile completion fish")
-        (fish_completion/"upfile.fish").write output
+        bash_completion.install "completions/upfile.bash" => "upfile"
+        zsh_completion.install "completions/upfile.zsh" => "_upfile"
+        fish_completion.install "completions/upfile.fish"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/skewb1k/upfile/releases/download/v1.0.1/upfile_Linux_x86_64.tar.gz"
-      sha256 "5864e0d811b6612dae3a7d4a8c7547fa7d9dc160c367976bafa09cfa51f751df"
+      url "https://github.com/skewb1k/upfile/releases/download/v1.0.2/upfile_Linux_x86_64.tar.gz"
+      sha256 "a1f0b602a47fa8528903a1f4237f82d43e9f32900254102b7beae08685f22017"
       def install
         bin.install "upfile"
-        output = Utils.popen_read("#{bin}/upfile completion bash")
-        (bash_completion/"upfile").write output
-        output = Utils.popen_read("#{bin}/upfile completion zsh")
-        (zsh_completion/"_upfile").write output
-        output = Utils.popen_read("#{bin}/upfile completion fish")
-        (fish_completion/"upfile.fish").write output
+        bash_completion.install "completions/upfile.bash" => "upfile"
+        zsh_completion.install "completions/upfile.zsh" => "_upfile"
+        fish_completion.install "completions/upfile.fish"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/skewb1k/upfile/releases/download/v1.0.1/upfile_Linux_arm64.tar.gz"
-      sha256 "f7ed33a173df7458576095c7c5c26e32c31317c4949ce79a3b6268a455d35aef"
+      url "https://github.com/skewb1k/upfile/releases/download/v1.0.2/upfile_Linux_arm64.tar.gz"
+      sha256 "689612bfcfccc18a65cb9b7ff9922c36bee7a1a76783af54b4596dc228e89ccf"
       def install
         bin.install "upfile"
-        output = Utils.popen_read("#{bin}/upfile completion bash")
-        (bash_completion/"upfile").write output
-        output = Utils.popen_read("#{bin}/upfile completion zsh")
-        (zsh_completion/"_upfile").write output
-        output = Utils.popen_read("#{bin}/upfile completion fish")
-        (fish_completion/"upfile.fish").write output
+        bash_completion.install "completions/upfile.bash" => "upfile"
+        zsh_completion.install "completions/upfile.zsh" => "_upfile"
+        fish_completion.install "completions/upfile.fish"
       end
     end
   end
