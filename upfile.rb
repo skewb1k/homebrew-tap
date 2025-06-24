@@ -10,7 +10,7 @@ class Upfile < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/skewb1k/upfile/releases/download/v1.0.2/upfile_Darwin_x86_64.tar.gz"
-      sha256 "451ac0c41704834637373445b1ff9f8a3cd9a938c4254d93b877f4533b5e623b"
+      sha256 "4427aaf09cb2b8df2ed821ce39b5fe8e031e2a7d8d606627a0962b59913f2bf4"
 
       def install
         bin.install "upfile"
@@ -21,7 +21,7 @@ class Upfile < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/skewb1k/upfile/releases/download/v1.0.2/upfile_Darwin_arm64.tar.gz"
-      sha256 "81ba5d54607a060a90f6eb04290adcdedd694655af296f7491175a20bb7f18eb"
+      sha256 "f8f93abb19ce10e08cb599fcff06253b959e63f9017db059dd8675278b664d25"
 
       def install
         bin.install "upfile"
@@ -35,7 +35,7 @@ class Upfile < Formula
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
       url "https://github.com/skewb1k/upfile/releases/download/v1.0.2/upfile_Linux_x86_64.tar.gz"
-      sha256 "a1f0b602a47fa8528903a1f4237f82d43e9f32900254102b7beae08685f22017"
+      sha256 "ccb1b8ee5b06655c6d4a2a6718d19adda6dbd92bb267da760f438bb14dedeb69"
       def install
         bin.install "upfile"
         bash_completion.install "completions/upfile.bash" => "upfile"
@@ -45,7 +45,7 @@ class Upfile < Formula
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
       url "https://github.com/skewb1k/upfile/releases/download/v1.0.2/upfile_Linux_arm64.tar.gz"
-      sha256 "689612bfcfccc18a65cb9b7ff9922c36bee7a1a76783af54b4596dc228e89ccf"
+      sha256 "d500936231be558e6c5b84159b218b843355a755c49ab7c3cd54c113e7301c5d"
       def install
         bin.install "upfile"
         bash_completion.install "completions/upfile.bash" => "upfile"
