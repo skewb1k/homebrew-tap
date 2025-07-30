@@ -5,12 +5,12 @@
 class Upfile < Formula
   desc "A CLI tool to manage and sync shared configuration files across projects."
   homepage "github.com/skewb1k/upfile"
-  version "1.0.2"
+  version "1.1.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/skewb1k/upfile/releases/download/v1.0.2/upfile_Darwin_x86_64.tar.gz"
-      sha256 "b112e8b61f909b918c17340a98e1682e9f5b60cf0ec5c5c668ce823ceaa7c8f1"
+      url "https://github.com/skewb1k/upfile/releases/download/v1.1.0/upfile_Darwin_x86_64.tar.gz"
+      sha256 "457ddf5856564f75f8c81c8777ae3b69834e267ef619ea446edef0154de940d9"
 
       def install
         bin.install "upfile"
@@ -23,8 +23,8 @@ class Upfile < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/skewb1k/upfile/releases/download/v1.0.2/upfile_Darwin_arm64.tar.gz"
-      sha256 "4e78fed2b38dfa7560fb848b523f70fc6190986c348116c4e46d3862fba12ce0"
+      url "https://github.com/skewb1k/upfile/releases/download/v1.1.0/upfile_Darwin_arm64.tar.gz"
+      sha256 "9407b44230c5109d649b4faf400229a80f7b009fe848151cf43cc1ff994697e3"
 
       def install
         bin.install "upfile"
@@ -40,8 +40,8 @@ class Upfile < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/skewb1k/upfile/releases/download/v1.0.2/upfile_Linux_x86_64.tar.gz"
-      sha256 "0ddee9eb668c220cd2c3eb81c620539a13faa41663bcf38f1742f0f10ff3c448"
+      url "https://github.com/skewb1k/upfile/releases/download/v1.1.0/upfile_Linux_x86_64.tar.gz"
+      sha256 "0566b74d96cae777dd4b1594abf4aca61a55558ecfd34a4472fb5646fab66db3"
       def install
         bin.install "upfile"
         bash_output = Utils.safe_popen_read("#{bin}/upfile", "completion", "bash")
@@ -53,8 +53,8 @@ class Upfile < Formula
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/skewb1k/upfile/releases/download/v1.0.2/upfile_Linux_arm64.tar.gz"
-      sha256 "3a451dd612f5402ef968177763541ac6ff5c0a832e02c0ae0599b32be1c527a5"
+      url "https://github.com/skewb1k/upfile/releases/download/v1.1.0/upfile_Linux_arm64.tar.gz"
+      sha256 "ecbeaddef07b1098cef291429b03971818a6306f82b72e2e1b28e4c1e05185ec"
       def install
         bin.install "upfile"
         bash_output = Utils.safe_popen_read("#{bin}/upfile", "completion", "bash")
